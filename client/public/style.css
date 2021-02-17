@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    background-color: #c2b092;
+    margin: 0;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    height: 100vh;
+}
+
+.home-menu {
+    padding: 5rem 2rem 5rem 2rem;
+}
+
+.login-signup-form {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.login-signup-form > form {
+    grid-row: 2 / 2;
+    grid-column: 2 / 2;
+    min-width: 200px;
+}
+
+#login-form {
+    padding-bottom: 2rem;
+}
+
+#signup-form {
+    padding-bottom: 4rem;
+}
+
+.home-menu, .login-signup-form {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 1fr auto 1fr;
+    background-color: #537791;
+    position: relative;
+    width: 30%;
+    min-width: 200px;
+    font-family: 'Roboto';
+    border-radius: 10px;
+    box-shadow: 
+    0 4px 8px rgb(0 0 0 / 10%), 
+    0 8px 16px rgb(0 0 0 / 10%);
+    height: 380px;
+}
+
+.home-menu > p {
+    display: flex;
+    justify-self: center;
+    font-size: 2em;
+    grid-column: 2 / 2;
+    margin: 0;
+    margin-bottom: 2rem;
+}
+
+.home-menu-btn, .login-signup-form > form > button {
+    cursor: pointer;
+}
+
+.home-menu-btn, .login-signup-form > form > input, .login-signup-form > form > button, .login-signup-form > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 0.9em;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    box-shadow: 
+    0 1px 2px rgb(0 0 0 / 10%), 
+    0 2px 4px rgb(0 0 0 / 10%);
+    background-color: #EFEFEF;
+    color: black;
+    width: 100%;
+}
+
+.home-menu-btn, .login-signup-form > form > input, .login-signup-form > form > button {
+    grid-column: 2 / 2;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+}
+
+.home-menu-btn:hover, .login-signup-form > form > button:hover, .login-signup-form > a:hover {
+    background-color: #c2b092;
+    transform: scale(1.03);
+}
+
+.login-signup-form > form > label {
+    font-size: 1.2em;
+    grid-column: 2 / 2;
+    margin-top: 1rem;
+}
+
+.login-signup-form > form > button {
+    margin-left: 0.5rem;
+    margin-top: 2rem;
+}
+
+.login-signup-form> a {
+    max-width: 50px;
+    margin: 1rem 0.5rem 0.5rem -1rem;
+    border-radius: 7px;
+    height: 15%;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+}
+
+.login-signup-form > form > input:nth-child(2) {
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+    .login-signup-form > a {
+        grid-column: 2 / 2;
+        grid-row: 1 / 1;
+    }
+
+    .login-signup-form > form {
+        min-width: 0px;
+    }
+}
