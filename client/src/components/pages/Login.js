@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { React, useEffect, useState } from 'react'
 
-function Login() {
+function Login(props) {
     const [input, setInput] = useState({
         username: '',
         password: ''
@@ -33,7 +33,7 @@ function Login() {
         })
         .then(response => response.json())
         .then(data => console.log(data))
-        .then(window.location.href = "/")
+        .then(() => props.setRender(true))
         .catch(err => console.log('Incorrect Details'))
     }
 

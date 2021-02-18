@@ -1,3 +1,5 @@
+import React, { useEffect, useLayoutEffect, useMemo, useState } from 'react'
+
 function Home(props) {
     const handleLogout = () => {
         fetch('/api/logout', {
@@ -7,11 +9,11 @@ function Home(props) {
         .then(data => console.log(data))
         .catch(err => console.log('Incorrect Details'))
     }
-    
+
     return(
         <div className="home">
             <div className="home-menu">
-            {props.activeUser=== 'false' ? 
+            {props.activeUser === 'false' ? 
             <>
                 <p>Welcome to Quizbox</p> 
                 <a href="/" className="home-menu-btn">Play</a>
@@ -21,7 +23,7 @@ function Home(props) {
             :
             <> 
                 <p>Welcome to Quizbox, {props.activeUser}</p>
-                <a href="/" className="home-menu-btn">Play</a>
+                <a href="/categories" className="home-menu-btn">Play</a>
                 <a href="/" className="home-menu-btn" onClick={handleLogout}>Logout</a>
             </>
             }

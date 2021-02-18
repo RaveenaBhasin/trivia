@@ -4,13 +4,17 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import Home from './components/pages/Home'
 import Signup from './components/pages/Signup'
 import Login from './components/pages/Login'
+import Categories from './components/pages/Categories'
 
 
 function App() {    
     const [activeUser, setActiveUser] = useState(localStorage.getItem('user'))
+    const [render, setRender] = useState(false)
 
-// Sends a GET request so back-end middleware can run automatically on page change and receives data if user is active or not
+// Sends a GET request so back-end middleware can run automatically on page change and receives data if user is active or not,
+//  runs when render state changes, so runs on mount or page refresh, and runs when state is updated.
     useEffect(() => {
+        console.log('running')
         fetch('/api/runapp', {
             method: 'GET',
         })
@@ -25,15 +29,17 @@ function App() {
             } 
         })
         .catch(() => console.log('Error with running express app'))
-    }, [])
+    },[render])
 
   return (
+      <div>
       <BrowserRouter>
-        <Route exact path="/"><Home activeUser={activeUser}/></Route>
+        <Route exact path="/"><Home activeUser={activeUser} /></Route>
         <Route exact path="/createaccount"><Signup /></Route>
-        <Route exact path="/login"><Login /></Route>
-        <Route exact path="/logout"><Home /></Route>
+        <Route exact path="/login"><Login setRender={setRender} /></Route>
+        <Route exact path="/categories"><Categories /></Route>
     </BrowserRouter>
+    </div>  
   );
 }
 
