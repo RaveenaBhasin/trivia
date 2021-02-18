@@ -13,10 +13,16 @@ body {
 }
 
 .home-menu {
+    display: grid;
+    grid-template-rows: repeat(3, auto) 1fr;
+    grid-template-columns: 1fr auto 1fr;
     padding: 5rem 2rem 5rem 2rem;
 }
 
 .login-signup-form {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 1fr auto 1fr;
     padding-left: 2rem;
     padding-right: 2rem;
 }
@@ -37,9 +43,6 @@ body {
 
 .home-menu, .login-signup-form {
     box-sizing: border-box;
-    display: grid;
-    grid-template-rows: repeat(3, auto);
-    grid-template-columns: 1fr auto 1fr;
     background-color: #537791;
     position: relative;
     width: 30%;
@@ -80,6 +83,12 @@ body {
     background-color: #EFEFEF;
     color: black;
     width: 100%;
+}
+
+.home-menu-btn {
+    display: flex;
+    justify-self: center;
+    max-width: 307px;
 }
 
 .home-menu-btn, .login-signup-form > form > input, .login-signup-form > form > button {

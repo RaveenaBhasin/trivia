@@ -5,7 +5,7 @@ function Signup() {
                 <a href="/">Home</a>
                 <form method="POST" action="/createaccount">
                     <label htmlFor="username">Username:</label>
-                    <input type="text" name="username" placeholder="Enter a username" requried></input>
+                    <input type="text" name="username" placeholder="Enter a username" required></input>
                     <label htmlFor="password">Password:</label>
                     <input type="text" name="password" placeholder="Password" required></input>
                     <input type="text" name="confirmPassword" placeholder="Confirm Password" required></input>

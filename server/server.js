@@ -1,10 +1,10 @@
-require('dotenv').config()
 const express = require('express');
 const cors = require('cors')
 const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const app = express();
+require('dotenv').config()
 
 const signupRoute = require('./routes/signup')
 const loginRoute = require('./routes/login')
@@ -20,7 +20,7 @@ app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 app.use(express.static('public'))
-app.use(cors())
+app.use(cors({}))
 
 app.use('/', signupRoute)
 app.use('/', loginRoute)
