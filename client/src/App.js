@@ -5,7 +5,7 @@ import Home from './components/pages/Home'
 import Signup from './components/pages/Signup'
 import Login from './components/pages/Login'
 import Categories from './components/pages/Categories'
-
+import Cinema from './components/pages/Cinema'
 
 function App() {    
     const [activeUser, setActiveUser] = useState(localStorage.getItem('user'))
@@ -29,7 +29,17 @@ function App() {
             } 
         })
         .catch(() => console.log('Error with running express app'))
-    },[render])
+    }, [render])
+
+// Conditionally loads home page after login and changes render back to false.
+    useEffect(() => {
+        if (activeUser !== 'false') {
+            if (render === true) {
+                window.location.href = "/"
+                setRender(false)
+            }
+        }
+    })
 
   return (
       <div>
@@ -38,6 +48,7 @@ function App() {
         <Route exact path="/createaccount"><Signup /></Route>
         <Route exact path="/login"><Login setRender={setRender} /></Route>
         <Route exact path="/categories"><Categories /></Route>
+        <Route exact path="/cinema"><Cinema /></Route>
     </BrowserRouter>
     </div>  
   );

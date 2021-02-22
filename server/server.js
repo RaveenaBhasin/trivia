@@ -8,6 +8,7 @@ require('dotenv').config()
 
 const signupRoute = require('./routes/signup')
 const loginRoute = require('./routes/login')
+const scoreRoute = require('./routes/scores')
 
 const mongoDb = `mongodb+srv://admin:${process.env.PASS}@trivia.ylxsz.mongodb.net/${process.env.DB}?retryWrites=true&w=majority`;
 mongoose.connect(mongoDb, { useUnifiedTopology: true, useNewUrlParser: true });
@@ -24,6 +25,7 @@ app.use(cors({}))
 
 app.use('/', signupRoute)
 app.use('/', loginRoute)
+app.use('/', scoreRoute)
 
 app.listen(5000).on('error', (err) => {
     console.log(err)
