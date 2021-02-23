@@ -6,15 +6,16 @@ import Signup from './components/pages/Signup'
 import Login from './components/pages/Login'
 import Categories from './components/pages/Categories'
 import Cinema from './components/pages/Cinema'
+import Leaderboard from './components/pages/Leaderboard'
 
 function App() {    
     const [activeUser, setActiveUser] = useState(localStorage.getItem('user'))
+    const [scores, setScores] = useState(sessionStorage.getItem('scores'))
     const [render, setRender] = useState(false)
 
 // Sends a GET request so back-end middleware can run automatically on page change and receives data if user is active or not,
 //  runs when render state changes, so runs on mount or page refresh, and runs when state is updated.
     useEffect(() => {
-        console.log('running')
         fetch('/api/runapp', {
             method: 'GET',
         })
@@ -44,9 +45,10 @@ function App() {
   return (
       <div>
       <BrowserRouter>
-        <Route exact path="/"><Home activeUser={activeUser} /></Route>
+        <Route exact path="/"><Home activeUser={activeUser} setScores={setScores} /></Route>
         <Route exact path="/createaccount"><Signup /></Route>
         <Route exact path="/login"><Login setRender={setRender} /></Route>
+        <Route exact path="/leaderboard"><Leaderboard scores={scores} /></Route>
         <Route exact path="/categories"><Categories /></Route>
         <Route exact path="/cinema"><Cinema /></Route>
     </BrowserRouter>

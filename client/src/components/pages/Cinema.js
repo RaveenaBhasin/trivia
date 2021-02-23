@@ -10,6 +10,7 @@ import CinemaResults from '../components/cinema/CinemaResults'
 function Cinema() {
     const [question, setQuestion] = useState(1)
 
+// Each click sets state and changes page. Goes back to page 1 on page refresh / state change.
     return(
         <div className="questionPage">
             {question === 1 ? <CinemaQ1 setQuestion={setQuestion} /> : null}

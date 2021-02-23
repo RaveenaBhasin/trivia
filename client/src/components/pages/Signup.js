@@ -1,5 +1,5 @@
 import React from 'react'
-
+// Sends POST request to back-end for user creation, returns to login page if successful.
 function Signup() {
     return(
         <div className="home">

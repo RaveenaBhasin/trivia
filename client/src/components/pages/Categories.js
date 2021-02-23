@@ -11,7 +11,11 @@ useEffect(() => {
         if (event.target.parentNode.className === "categoryItem") {
             const page = event.target.parentNode.getAttribute('category');
 
-            window.location.href = `/${page}`
+            if (page === 'music' || page === 'history' || page === 'science') {
+                return
+            } else {
+                window.location.href = `/${page}`
+            }
         }
     })
 }, []) 
@@ -20,9 +24,9 @@ useEffect(() => {
         <div className="categoriesPage">
             <div className="categoriesContainer">
                 <div className="categoryItem" category="cinema"><p>Cinema</p><img src={cinema_category} alt="Cinema Category"></img></div>
-                <div className="categoryItem" category="music"><p>Music</p><img src={music_category} alt="Music Category"></img></div>
-                <div className="categoryItem" category="history"><p>History</p><img src={history_category} alt="History Category"></img></div>
-                <div className="categoryItem" category="science"><p>Science</p><img src={science_category} alt="Science Category"></img></div>
+                <div className="categoryItem" category="music"><p>Music <span>Coming Soon</span></p><img src={music_category} alt="Music Category"></img></div>
+                <div className="categoryItem" category="history"><p>History <span>Coming Soon</span></p><img src={history_category} alt="History Category"></img></div>
+                <div className="categoryItem" category="science"><p>Science <span>Coming Soon</span></p><img src={science_category} alt="Science Category"></img></div>
             </div>
         </div>
     )
