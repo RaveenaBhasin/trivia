@@ -4,6 +4,7 @@ function Leaderboard(props) {
         <div className="leaderboardPage">
             <div className="scoreContainer">
                 <div className="cinemaScores">
+                        <a href="/">Home</a>
                         <h1 className="scoreTitle">Cinema</h1>
                         <table className="scoreTable">
                             <tr>

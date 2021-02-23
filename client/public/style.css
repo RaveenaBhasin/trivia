@@ -95,7 +95,7 @@ body {
     cursor: pointer;
 }
 
-.home-menu-btn, .login-signup-form > form > input, .login-signup-form > form > button, .login-signup-form > a, .resultsContainer > a {
+.home-menu-btn, .login-signup-form > form > input, .login-signup-form > form > button, .login-signup-form > a, .resultsContainer > a, .cinemaScores > a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,7 +125,7 @@ body {
     border-radius: 10px;
 }
 
-.home-menu-btn:hover, .login-signup-form > form > button:hover, .login-signup-form > a:hover, .questionAnswer > div:hover, .resultsContainer > a:hover {
+.home-menu-btn:hover, .login-signup-form > form > button:hover, .login-signup-form > a:hover, .questionAnswer > div:hover, .resultsContainer > a:hover, .cinemaScores > a:hover {
     background-color: #c2b092;
     transform: scale(1.03);
 }
@@ -265,7 +265,7 @@ body {
     background-color: #aa2b1d
 }
 
-.resultsContainer > a {
+.resultsContainer > a, .cinemaScores > a {
     font-family: 'Roboto';
     position: absolute;
     max-width: 50px;
